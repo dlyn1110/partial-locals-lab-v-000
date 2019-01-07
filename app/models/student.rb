@@ -16,6 +16,6 @@ class Student < ActiveRecord::Base
 
   def self.search(string)
     @student = string.present? ? Student.where("name LIKE ?", "%#{string}%") : Student.all
-    binding.pry
+    #binding.pry
   end
 end
