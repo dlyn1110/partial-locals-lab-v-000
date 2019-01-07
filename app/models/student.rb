@@ -15,7 +15,7 @@ class Student < ActiveRecord::Base
   has_many :classrooms, through: :classroom_students
 
   def self.search(string)
-    @student = string.present? ? Student.where("name LIKE ?", "%#{string}%") : Student.all
+    string.present? ? Student.where("name LIKE ?", "%#{string}%") : Student.all
     #binding.pry
   end
 end
